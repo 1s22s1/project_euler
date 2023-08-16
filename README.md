@@ -1,7 +1,3 @@
-# プロジェクトオイラー
+# Project Euler
 
-プロジェクトオイラーをやっています。
-
-## 参考リンク
-
-- [The Fast Track to Julia](https://juliadocs.github.io/Julia-Cheat-Sheet/ja/)
+I solve Project Euler.
