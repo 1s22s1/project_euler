@@ -17,9 +17,14 @@ func TestQ0001(t *testing.T) {
 		want int
 	}{
 		{
-			name: "normal",
+			name: "normal1",
 			args: args{n: 10},
 			want: 23,
+		},
+		{
+			name: "normal2",
+			args: args{n: 1000},
+			want: 233168,
 		},
 	}
 
