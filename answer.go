@@ -13,9 +13,11 @@ func q0001(n int) int {
 }
 
 func q0002(max int) int {
-	var m int = 1
-	var n int = 1
-	var answer int = 0
+	var (
+		m      int = 1
+		n      int = 1
+		answer int = 0
+	)
 
 	for {
 		if n > max {
