@@ -1,16 +1,13 @@
 m = 1
 n = 1
-sequence = []
+answer = 0
 
 while n < 4000000
-    push!(sequence, n)
+    if n % 2 == 0
+        global answer +=n
+    end
 
-    swap = n
-    global n = n + m
-    global m = swap
+    global n, m = n + m, n
 end
 
-filterd_sequence = filter(iseven , sequence)
-answer = sum(filterd_sequence)
-
-println(answer)
+@show answer
