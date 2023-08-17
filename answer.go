@@ -11,3 +11,21 @@ func q0001(n int) int {
 
 	return sum
 }
+
+func q0002(max int) int {
+	var m int = 1
+	var n int = 1
+	var answer int = 0
+
+	for {
+		if n > max {
+			return answer
+		}
+
+		if n%2 == 0 {
+			answer += n
+		}
+
+		n, m = n+m, n
+	}
+}
