@@ -31,3 +31,30 @@ func q0002(max int) int {
 		n, m = n+m, n
 	}
 }
+
+func q0003(n int) int {
+	var x []int
+
+	for {
+		if n == 1 {
+			break
+		}
+
+		for i := 2; i <= n; i++ {
+			if n%i == 0 {
+				x = append(x, i)
+				n = n / i
+				break
+			}
+		}
+	}
+
+	max := -1
+	for _, x := range x {
+		if max < x {
+			max = x
+		}
+	}
+
+	return max
+}
