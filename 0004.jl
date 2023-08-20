@@ -1,8 +1,7 @@
-function main()
 products = []
 
-for i = 999:-1:100
-    for j = 999:-1:100
+for i = 100:999
+    for j = 100:999
         if string(i * j) == reverse(string(i * j))
             push!(products, i * j)
         end
@@ -10,6 +9,3 @@ for i = 999:-1:100
 end
 
 @show maximum(products)
-end
-
-main()
