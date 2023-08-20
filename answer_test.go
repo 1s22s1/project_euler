@@ -129,3 +129,35 @@ func TestIsPalindrome(t *testing.T) {
 		})
 	}
 }
+
+func TestQ0004(t *testing.T) {
+	type args struct {
+		first int
+		last  int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "normal1",
+			args: args{first: 10, last: 99},
+			want: 9009,
+		},
+		{
+			name: "normal2",
+			args: args{first: 100, last: 999},
+			want: 906609,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if diff := cmp.Diff(tt.want, q0004(tt.args.first, tt.args.last)); diff != "" {
+				t.Error(diff)
+			}
+		})
+	}
+}

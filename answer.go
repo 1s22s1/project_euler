@@ -1,5 +1,7 @@
 package answer
 
+import "strconv"
+
 func q0001(n int) int {
 	var sum int = 0
 
@@ -68,4 +70,25 @@ func isPalindrome(s string) bool {
 	}
 
 	return s == string(reverseRunes)
+}
+
+func q0004(first int, last int) int {
+	var x []int
+
+	for i := first; i <= last; i++ {
+		for j := first; j <= last; j++ {
+			if isPalindrome(strconv.Itoa(i * j)) {
+				x = append(x, i*j)
+			}
+		}
+	}
+
+	max := -1
+	for _, x := range x {
+		if max < x {
+			max = x
+		}
+	}
+
+	return max
 }
