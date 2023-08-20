@@ -58,3 +58,14 @@ func q0003(n int) int {
 
 	return max
 }
+
+func isPalindrome(s string) bool {
+	var runes []rune = []rune(s)
+	var reverseRunes []rune = []rune(s)
+
+	for i, j := 0, len(runes)-1; i < len(runes); i, j = i+1, j-1 {
+		reverseRunes[j] = runes[i]
+	}
+
+	return s == string(reverseRunes)
+}

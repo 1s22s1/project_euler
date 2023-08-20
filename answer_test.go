@@ -98,3 +98,34 @@ func TestQ0003(t *testing.T) {
 		})
 	}
 }
+
+func TestIsPalindrome(t *testing.T) {
+	type args struct {
+		n string
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		{
+			name: "normal1",
+			args: args{n: "13431"},
+			want: true,
+		},
+		{
+			name: "normal2",
+			args: args{n: "13432"},
+			want: false,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if diff := cmp.Diff(tt.want, isPalindrome(tt.args.n)); diff != "" {
+				t.Error(diff)
+			}
+		})
+	}
+}
