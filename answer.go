@@ -106,3 +106,7 @@ func gcd(m int, n int) int {
 		m, n = n, m%n
 	}
 }
+
+func lcm(m int, n int) int {
+	return m * n / gcd(m, n)
+}

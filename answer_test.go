@@ -193,3 +193,35 @@ func TestGcd(t *testing.T) {
 		})
 	}
 }
+
+func TestLcm(t *testing.T) {
+	type args struct {
+		n int
+		m int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "normal1",
+			args: args{n: 6, m: 8},
+			want: 24,
+		},
+		{
+			name: "normal2",
+			args: args{n: 32, m: 24},
+			want: 96,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if diff := cmp.Diff(tt.want, lcm(tt.args.n, tt.args.m)); diff != "" {
+				t.Error(diff)
+			}
+		})
+	}
+}
