@@ -120,3 +120,18 @@ func q0005(first int, last int) int {
 
 	return r
 }
+
+func q0006(first int, last int) int {
+	var a int = 0
+
+	for i := first; i <= last; i++ {
+		a += i * i
+	}
+
+	var s int = 0
+	for i := first; i <= last; i++ {
+		s += i
+	}
+
+	return s*s - a
+}
