@@ -110,3 +110,13 @@ func gcd(m int, n int) int {
 func lcm(m int, n int) int {
 	return m * n / gcd(m, n)
 }
+
+func q0005(first int, last int) int {
+	var r int = 1
+
+	for i := first; i <= last; i++ {
+		r = lcm(r, i)
+	}
+
+	return r
+}

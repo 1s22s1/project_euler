@@ -225,3 +225,35 @@ func TestLcm(t *testing.T) {
 		})
 	}
 }
+
+func TestQ0005(t *testing.T) {
+	type args struct {
+		first int
+		last  int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "normal1",
+			args: args{first: 1, last: 10},
+			want: 2520,
+		},
+		{
+			name: "normal2",
+			args: args{first: 1, last: 20},
+			want: 232792560,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if diff := cmp.Diff(tt.want, q0005(tt.args.first, tt.args.last)); diff != "" {
+				t.Error(diff)
+			}
+		})
+	}
+}

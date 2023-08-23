@@ -17,7 +17,6 @@ function lcm(m, n)
 end
 
 answer = 1
-
 for i = 1:20
     global answer = lcm(answer, i)
 end
