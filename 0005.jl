@@ -22,4 +22,4 @@ for i = 1:20
     global answer = lcm(answer, i)
 end
 
-println(Int(answer))
+@show Int(answer)
