@@ -92,3 +92,17 @@ func q0004(first int, last int) int {
 
 	return max
 }
+
+func gcd(m int, n int) int {
+	for {
+		if m < n {
+			m, n = n, m
+		}
+
+		if m%n == 0 {
+			return n
+		}
+
+		m, n = n, m%n
+	}
+}

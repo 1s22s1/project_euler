@@ -161,3 +161,35 @@ func TestQ0004(t *testing.T) {
 		})
 	}
 }
+
+func TestGcd(t *testing.T) {
+	type args struct {
+		n int
+		m int
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want int
+	}{
+		{
+			name: "normal1",
+			args: args{n: 36, m: 24},
+			want: 12,
+		},
+		{
+			name: "normal2",
+			args: args{n: 18, m: 30},
+			want: 6,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if diff := cmp.Diff(tt.want, gcd(tt.args.n, tt.args.m)); diff != "" {
+				t.Error(diff)
+			}
+		})
+	}
+}
